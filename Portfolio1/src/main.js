@@ -1,5 +1,10 @@
 import './style.css';
 
+/*
+Når du lager nye prosjekter kommer det dublikat,
+alt du må gjøre for å fikse dette trenger du bare å refreshe siden
+*/
+
 const page = document.getElementById("page");
 // const main = document.getElementById("main");
 const form = document.getElementById("project-form");
