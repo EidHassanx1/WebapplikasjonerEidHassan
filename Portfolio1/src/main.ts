@@ -1,118 +1,129 @@
-import './style.css';
-import data from './data.json';
+// import './style.css';
+// import data from './data.json';
 
-type Member = {
-  name: string;
-  gender: string;
-  age: number;
-}
+// type Member = {
+//   name: string;
+//   gender: string;
+//   age: number;
+// }
 
-type Prosjekt = {
-  title: string;
-  leader: string;
-  members: Member[];
-}
+// type Prosjekt = {
+//   title: string;
+//   leader: string;
+//   members: Member[];
+// }
 
-const page = document.getElementById("page");
+// const page = document.getElementById("page");
 
-function printProsjektInfo(prosjekt: Prosjekt): void {
-  const prosjektElement = document.createElement('div');
-  prosjektElement.className = 'prosjekt';
+// function printProsjektInfo(prosjekt: Prosjekt): void {
+//   const prosjektElement = document.createElement('div');
+//   prosjektElement.className = 'prosjekt';
 
-  prosjektElement.innerHTML = `
-    <h3>${prosjekt.title}</h3>
-    <p>Leader: ${prosjekt.leader}</p>
-    <ul>
-      ${prosjekt.members.map(member => `
-        <li>${member.name}: ${member.age} år ${member.gender}</li>
-      `).join('')}
-    </ul>
-  `;
+//   prosjektElement.innerHTML = `
+//     <h3>${prosjekt.title}</h3>
+//     <p>Leader: ${prosjekt.leader}</p>
+//     <ul>
+//       ${prosjekt.members.map(member => `
+//         <li>${member.name}: ${member.age} år ${member.gender}</li>
+//       `).join('')}
+//     </ul>
+//   `;
 
-  page?.appendChild(prosjektElement);
-}
+//   page?.appendChild(prosjektElement);
+// }
 
-console.log(data.Prosjekt);
+// async function fetchProjects() {
+//   try {
+//     const response = await fetch('http://localhost:5454/json', {
+//       method: 'GET',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//     });
+//     if (!response.ok) {
+//       throw new Error('Error fetching projects');
+//     }
 
-const main = document.getElementById("main");
-const form = document.getElementById("project-form") as HTMLFormElement;
-const titleInput = document.getElementById("title") as HTMLInputElement;
-const leaderInput = document.getElementById("leader") as HTMLInputElement;
-const memberNameInput = document.getElementById("memberName") as HTMLInputElement;
-const memberAgeInput = document.getElementById("memberAge") as HTMLInputElement;
-const memberGenderInput = document.getElementById("memberGender") as HTMLInputElement;
+//     const projects = await response.json();
+//     projects.forEach(printProsjektInfo);
+//   } catch (error) {
+//     console.error('Error fetching projects:', error);
+//   }
+// }
 
-function newPrintProsjektInfo(event: Event): void {
-  event.preventDefault();
+// const main = document.getElementById("main");
+// const form = document.getElementById("project-form") as HTMLFormElement;
+// const titleInput = document.getElementById("title") as HTMLInputElement;
+// const leaderInput = document.getElementById("leader") as HTMLInputElement;
+// const memberNameInput = document.getElementById("memberName") as HTMLInputElement;
+// const memberAgeInput = document.getElementById("memberAge") as HTMLInputElement;
+// const memberGenderInput = document.getElementById("memberGender") as HTMLInputElement;
 
-  const inputTitle = titleInput.value;
-  const inputLeader = leaderInput.value;
-  const member = {
-    name: memberNameInput.value,
-    age: Number(memberAgeInput.value),
-    gender: memberGenderInput.value,
-  };
+// function newPrintProsjektInfo(event: Event): void {
+//   event.preventDefault();
 
-  const newProsjekt: Prosjekt = {
-    title: inputTitle,
-    leader: inputLeader,
-    members: [member],
-  };
+//   const inputTitle = titleInput.value;
+//   const inputLeader = leaderInput.value;
+//   const member = {
+//     name: memberNameInput.value,
+//     age: Number(memberAgeInput.value),
+//     gender: memberGenderInput.value,
+//   };
 
-  const newProsjektElement = document.createElement('div');
-  newProsjektElement.className = 'newProsjekt';
+//   const newProsjekt: Prosjekt = {
+//     title: inputTitle,
+//     leader: inputLeader,
+//     members: [member],
+//   };
 
-  newProsjektElement.innerHTML = `
-    <h3>${newProsjekt.title}</h3>
-    <p>Leader: ${newProsjekt.leader}</p>
-    <ul>
-      ${newProsjekt.members.map(member => `
-        <li>${member.name}: ${member.age} år ${member.gender}</li>
-      `).join('')}
-    </ul>
-  `;
+//   const newProsjektElement = document.createElement('div');
+//   newProsjektElement.className = 'newProsjekt';
 
-  main?.appendChild(newProsjektElement);
+//   newProsjektElement.innerHTML = `
+//     <h3>${newProsjekt.title}</h3>
+//     <p>Leader: ${newProsjekt.leader}</p>
+//     <ul>
+//       ${newProsjekt.members.map(member => `
+//         <li>${member.name}: ${member.age} år ${member.gender}</li>
+//       `).join('')}
+//     </ul>
+//   `;
 
-  titleInput.value = '';
-  leaderInput.value = '';
-  memberNameInput.value = '';
-  memberAgeInput.value = '';
-  memberGenderInput.value = '';
-}
+//   main?.appendChild(newProsjektElement);
 
-form.addEventListener('submit', newPrintProsjektInfo);
+//   titleInput.value = '';
+//   leaderInput.value = '';
+//   memberNameInput.value = '';
+//   memberAgeInput.value = '';
+//   memberGenderInput.value = '';
+  
+//   // Send the new project to the server
+//   addNewProject(newProsjekt);
+// }
 
-data.Prosjekt.forEach(printProsjektInfo);
+// async function addNewProject(newProsjekt: Prosjekt) {
+//   try {
+//     const response = await fetch('http://localhost:5454/leggTil', {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify(newProsjekt),  // Send the actual new project data
+//     });
 
+//     if (!response.ok) {
+//       throw new Error('Error adding project');
+//     }
 
+//     // Refresh the project list
+//     await fetchProjects();
+//   } catch (error) {
+//     console.error('Failed to add project:', error);
+//   }
+// }
 
+// // Load initial data
+// data.Prosjekt.forEach(printProsjektInfo);
 
-
-//VIL IKKE SLETTE NOE I TILFELLE JEG TREGNER Å VITE HVOR JEG HAR TINGENE
-//HVIS JEG "HUSKER" PÅ Å SLETTE DEM NÅR JEG ER FERDIG GJØR JEG DET SENERE :)
-
-
-// import typescriptLogo from './typescript.svg'
-// import viteLogo from '/vite.svg'
-// // import { setupCounter } from './counter.ts'
-
-// document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-//   <div>
-//     <a href="https://vitejs.dev" target="_blank">
-//       <img src="${viteLogo}" class="logo" alt="Vite logo" />
-//     </a>
-//     <a href="https://www.typescriptlang.org/" target="_blank">
-//       <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-//     </a>
-//     <h1>Vite + TypeScript</h1>
-//     <div class="card">
-//       <button id="counter" type="button"></button>
-//     </div>
-//     <p class="read-the-docs">
-//       Click on the Vite and TypeScript logos to learn more
-//     </p>
-//   </div>
-// `
-
-// // setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+// // Add event listener for the form
+// form.addEventListener('submit', newPrintProsjektInfo);

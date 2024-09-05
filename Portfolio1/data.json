@@ -1,0 +1,37 @@
+{
+  "Prosjekt": [
+    {
+      "title": "oblig",
+      "leader": "eid",
+      "members": [
+        {
+          "name": "haha",
+          "age": 22,
+          "gender": "male"
+        }
+      ]
+    },
+    {
+      "title": "hei og hå",
+      "leader": "fdas",
+      "members": [
+        {
+          "name": "asdf",
+          "age": 32,
+          "gender": "sadf"
+        }
+      ]
+    },
+    {
+      "title": "sdfa",
+      "leader": "asdf",
+      "members": [
+        {
+          "name": "asdf",
+          "age": 32,
+          "gender": "asdf"
+        }
+      ]
+    }
+  ]
+}
