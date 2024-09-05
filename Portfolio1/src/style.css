@@ -1,0 +1,55 @@
+body {
+  background-color: lightgrey;
+}
+
+.form{
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+  background-color: gray;
+}
+
+.input{
+  display: grid;
+}
+
+.button{
+  display: flex;
+  align-items: center;
+}
+
+.button button {
+  border-radius: 5px;
+  width: 150px;
+  height: 50px;
+  padding: 10px;  
+}
+
+button button:hover{
+  background-color: goldenrod;
+}
+
+#page{
+  display: flex;
+  justify-content: space-evenly;
+  
+}
+
+.prosjekt {
+  border: 0.5rem solid cyan;
+  display: grid;
+  justify-items: center;
+  background-color: rgb(158, 98, 0);
+}
+
+#main{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.newProsjekt{
+  border: 0.5rem solid cyan;
+  display: grid;
+  justify-items: center;
+  background-color: rgb(158, 98, 0);
+}

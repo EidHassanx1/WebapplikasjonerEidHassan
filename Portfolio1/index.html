@@ -1,0 +1,63 @@
+<!-- <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    
+      <form class="form" action="/submit" method="post">
+
+        <h3>Create your projects</h3>
+
+        <div class="input">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="description">Description</label>
+          <textarea id="message" name="description" required></textarea>
+        </div>
+
+        <div class="button">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    <div id="page"></div>
+    <div id="main"></div>
+    
+    <script type="module" src="src/main.ts"></script>
+    
+  </body>
+</html> -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    <form class="form" id="project-form">
+      <h3>Create your projects</h3>
+      <div class="input">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" required>
+        <label for="leader">Leader</label>
+        <input type="text" id="leader" name="leader" required>
+        <label for="memberName">Member Name</label>
+        <input type="text" id="memberName" name="memberName" required>
+        <label for="memberAge">Member Age</label>
+        <input type="number" id="memberAge" name="memberAge" required>
+        <label for="memberGender">Member Gender</label>
+        <input type="text" id="memberGender" name="memberGender" required>
+      </div>
+      <div class="button">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+    <div id="page"></div>
+    <div id="main"></div>
+    <script type="module" src="src/main.ts"></script>
+  </body>
+</html>

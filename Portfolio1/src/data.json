@@ -1,0 +1,84 @@
+{
+    "Prosjekt": [
+        {
+            "title": "ProjectID",
+            "leader": "Eid",
+            "members": [
+                {
+                    "name": "Gunnar",
+                    "gender": "male",
+                    "age": 22
+                },
+                {
+                    "name": "Roger",
+                    "gender": "male",
+                    "age": 24
+                }
+            ]
+        },
+        {
+            "title": "ProjectID",
+            "leader": "Chichi",
+            "members":[
+                {
+                    "name": "Bernt",
+                    "gender": "male",
+                    "age": 19
+                },
+                {
+                    "name": "Hulda",
+                    "gender": "female",
+                    "age": 23
+                }
+            ]
+        },
+        {
+            "title": "ProjectID",
+            "leader": "Eid",
+            "members": [
+                {
+                    "name": "Gunnar",
+                    "gender": "male",
+                    "age": 22
+                },
+                {
+                    "name": "Roger",
+                    "gender": "male",
+                    "age": 24
+                }
+            ]
+        },
+        {
+            "title": "ProjectID",
+            "leader": "Chichi",
+            "members":[
+                {
+                    "name": "Bernt",
+                    "gender": "male",
+                    "age": 19
+                },
+                {
+                    "name": "Hulda",
+                    "gender": "female",
+                    "age": 23
+                }
+            ]
+        },
+        {
+            "title": "ProjectID",
+            "leader": "Eid",
+            "members": [
+                {
+                    "name": "Gunnar",
+                    "gender": "male",
+                    "age": 22
+                },
+                {
+                    "name": "Roger",
+                    "gender": "male",
+                    "age": 24
+                }
+            ]
+        }
+    ]
+}
