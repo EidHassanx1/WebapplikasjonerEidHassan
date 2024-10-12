@@ -76,7 +76,9 @@ export default function StudentForm(props: StudentFormProps){
             onChange={(e) => setSenderName(e.target.value)}
             placeholder="NAVNET DITT"
             />
+            <br />
             <label htmlFor="message">MELDING</label>
+            <br />
             <textarea 
             id="message"
             value={message}
