@@ -7,6 +7,7 @@ type CreateProjectProps = {
 
 export default function CreateProject({ onAddProject }: CreateProjectProps) {
     const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -14,21 +15,29 @@ export default function CreateProject({ onAddProject }: CreateProjectProps) {
             alert('Prosjekttittelen må fylles ut');
             return;
         }
-    const newProject: ProjectType = {
-        title,
-        category: ''
+        if (!description) {
+            alert('Prosjektbeskrivelsen må fylles ut');
+            return;
+        }
+
+        const newProject: ProjectType = {
+            title,
+            description,
+            category: '',
+            id: 0
+        };
+
+        onAddProject(newProject);
+        setTitle('');
+        setDescription('');
     };
 
-    onAddProject(newProject);
-    setTitle('');
-    };
     return (
-        <>
         <div>
             <h2>Opprett nytt prosjekt</h2>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor="title">PROSJEKTTITTEL:</label>
+                    <label htmlFor="title">PROSJEKTTITTEL: </label>
                     <input
                         type="text"
                         id="title"
@@ -37,10 +46,17 @@ export default function CreateProject({ onAddProject }: CreateProjectProps) {
                         placeholder="SKRIV INN PROSJEKTTTITTEL"
                     />
                 </div>
+                <div>
+                    <label htmlFor="description">BESKRIVELSE: </label>
+                    <textarea
+                        id="description"
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
+                        placeholder="Skriv inn prosjektbeskrivelse"
+                    />
+                </div>
                 <button type="submit">LEGG TIL PROSJEKT</button>
             </form>
         </div>
-        </>
-    )
-
+    );
 }

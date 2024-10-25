@@ -1,15 +1,6 @@
-export type Student = {
-    id: string;
-    name: string;
-    degree?: string;
-    email?: string;
-};
-
-export type ExperienceType = {
-    name: string;
-};
-
 export type ProjectType = {
+    id: number;
     title: string;
     category: string;
+    description: string;
 };
