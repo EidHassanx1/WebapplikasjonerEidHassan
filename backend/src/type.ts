@@ -2,6 +2,8 @@ export type Project = {
     id: number;
     title: string;
     description: string;
-    category?: string;
+    status: 'draft' | 'published';
+    apublic: 'true' | 'false';
+    tags: string[];
     createdAt: string;
 }

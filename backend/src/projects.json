@@ -1,9 +1,24 @@
 [
   {
-    "id": 1,
-    "title": "Okey",
-    "description": "funka???",
-    "category": "",
-    "createdAt": "2024-10-26T13:18:25.319Z"
+    "id": 3,
+    "title": "d",
+    "description": "df",
+    "status": "published",
+    "apublic": "false",
+    "tags": [
+      "dfas fsad"
+    ],
+    "createdAt": "2024-10-30T19:01:49.094Z"
+  },
+  {
+    "id": 2,
+    "title": "faf",
+    "description": "23",
+    "status": "published",
+    "apublic": "true",
+    "tags": [
+      "23"
+    ],
+    "createdAt": "2024-10-30T19:02:42.002Z"
   }
 ]

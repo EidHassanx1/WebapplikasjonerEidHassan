@@ -38,10 +38,10 @@ app.get('/projects', (req, res) => {
 });
 
 app.post('/projects', (req, res) => {
-    const { title, description, category } = req.body;
+    const { title, description, status, apublic, tags = [] } = req.body;
 
     if (!title || !description) {
-        res.status(400).json({ error: 'Title and description are required' });
+        res.status(400).json({ error: 'Title or description are required' });
         return;
     }
 
@@ -51,7 +51,9 @@ app.post('/projects', (req, res) => {
         id: projects.length + 1,
         title,
         description,
-        category: category || '',
+        status,
+        apublic,
+        tags,
         createdAt: new Date().toISOString(),
     };
 

@@ -24,8 +24,11 @@ export default function Page() {
         const project = {
           id: data.id,
           title: data.title,
-          category: data.category ?? '',
-          description: data.description
+          description: data.description,
+          status: data.status,
+          apublic: data.apublic,
+          tags: data.tags,
+          createdAt: data.createdAt,
         };
         setProjects([...projects, project]);
       })
