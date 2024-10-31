@@ -93,11 +93,10 @@ import { createProjectsTable } from './db/tables';
 
 const app = express();
 
-// Ensure the projects table is created on startup
 createProjectsTable();
 
 app.use(cors({
-  origin: 'http://localhost:3001'  // Update to your frontend's origin
+  origin: 'http://localhost:3001'
 }));
 app.use(express.json());
 
@@ -112,24 +111,20 @@ app.get('/projects', (req, res) => {
   }
 });
 
-// Endpoint to add a new project
 app.post('/projects', (req, res) => {
   const { title, description, status, apublic, tags } = req.body;
 
-  // Validate required fields
   if (!title || !description) {
     res.status(400).json({ error: 'Title and description are required' });
     return;
   }
 
   try {
-    // Insert new project into the database
     const result = db.prepare(`
       INSERT INTO projects (title, description, status, apublic, tags)
       VALUES (?, ?, ?, ?, ?)
     `).run(title, description, status, apublic, tags);
 
-    // Define the new project to respond with
     const newProject = {
       id: result.lastInsertRowid,
       title,
@@ -147,7 +142,6 @@ app.post('/projects', (req, res) => {
   }
 });
 
-// Endpoint to delete a project
 app.delete('/projects/:id', (req, res) => {
   const id = parseInt(req.params.id, 10);
 
@@ -171,7 +165,6 @@ app.delete('/projects/:id', (req, res) => {
   }
 });
 
-// Start the server
 const PORT = 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
